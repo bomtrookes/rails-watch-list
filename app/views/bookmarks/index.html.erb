@@ -7,3 +7,11 @@
       </li>
     <% end %>
   </ul>
+
+<%# cloudinary example %>
+<%= cl_image_tag("kjuez5fjkmzhnvbqkyky",
+      width: 400, height: 300, crop: :fill) %>
+
+<!-- for face detection -->
+<%= cl_image_tag("kjuez5fjkmzhnvbqkyky",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>

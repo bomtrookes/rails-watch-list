@@ -1,9 +1,12 @@
-<h1>Lists</h1>
+<h1>List Names</h1>
 
   <ul>
     <% @lists.each do |list|%>
      <li>
-     <%= list.name %>
+     <%= link_to list.name, list %>
      </li>
     <% end %>
   </ul>
+
+<%# each list name will link to a like of movies, each of those movies will link to individual details about them %>
+<%# create, edit, delete lists %>
