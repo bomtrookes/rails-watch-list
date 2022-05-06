@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :find_list, only: [:show]
+  before_action :find_list, only: [:show, :edit, :update]
   def index
     @lists = List.all
   end
@@ -8,6 +8,13 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+  end
+
+  def edit; end
+
+  def update
+    @list.update(list_params)
+    redirect_to list_path(@list)
   end
 
   def create

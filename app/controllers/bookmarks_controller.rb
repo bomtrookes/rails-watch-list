@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :set_list, only: [:new, :create]
+  before_action :set_list, only: [:new, :create, :edit]
   def index
     @bookmarks = Bookmark.all
   end
@@ -7,6 +7,8 @@ class BookmarksController < ApplicationController
   def new
     @bookmark = Bookmark.new
   end
+
+  def edit; end
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
@@ -19,6 +21,7 @@ class BookmarksController < ApplicationController
   end
 
   private
+
   def set_list
     @list = List.find(params[:list_id])
   end
